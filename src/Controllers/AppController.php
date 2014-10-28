@@ -103,6 +103,10 @@ class AppController extends Controller
         $this->set('projects', $this->projects);
         $this->set('app', $this);
         $this->set('request', Request::getInstance());
+
+        if (Request::header('x-overlay')) {
+            $this->layout = false;
+        }
     }
 
     /**
