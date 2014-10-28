@@ -1,0 +1,30 @@
+<div class="project-listing container">
+    <h1 class="page-header">{{ t('projects') }}</h1>
+    <ul id="project-list">
+        {% for project in projects %}
+        <li>
+            <h2>
+                {{ link_to(project.name, project.slug) | raw }}
+
+                {% if project.codename %}
+                <small>
+                    <em class="project-codename">{{ project.codename }}</em>
+                </small>
+                {% endif %}
+            </h2>
+            <nav>
+                <ul class="nav nav-justified nav-pills">
+                    <li>{{ link_to(t('roadmap'), project.href('roadmap')) | raw }}</li>
+                    <li>{{ link_to(t('issues'), project.href('issues')) | raw }}</li>
+                    <li>{{ link_to(t('timeline'), project.href('timeline')) | raw }}</li>
+                    {{ run_hook('template:projects/index:project/nav', [project]) }}
+                </ul>
+            </nav>
+            <div class="description">
+                {{ format(project.info) | raw }}
+            </div>
+            {{ run_hook('template:projects/index:project', [project]) }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

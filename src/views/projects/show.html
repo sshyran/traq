@@ -1,0 +1,9 @@
+<div class="project-show container">
+    <h1 class="page-header">{{ project.name }}</h1>
+    <div>
+        {{ subscription_link_for(project) | raw }}
+    </div>
+    <div class="project_info">
+        {{ format(project.info) }}
+    </div>
+</div>
