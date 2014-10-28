@@ -99,9 +99,10 @@ class AppController extends Controller
                 $this->projects[] = $project;
             }
         }
-        $this->set('projects', $this->projects);
 
+        $this->set('projects', $this->projects);
         $this->set('app', $this);
+        $this->set('request', Request::getInstance());
     }
 
     /**
