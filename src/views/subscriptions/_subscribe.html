@@ -1,0 +1,5 @@
+{% if is_subscribed(current_user, object) %}
+    {{ link_to(t('unsubscribe'), object.href('unsubscribe')) | raw }}
+{% else %}
+    {{ link_to(t('subscribe'), object.href('subscribe')) | raw }}
+{% endif %}
