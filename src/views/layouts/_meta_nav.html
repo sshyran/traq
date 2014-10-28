@@ -2,41 +2,41 @@
     <div class="container">
         <ul class="links-site nav navbar-nav navbar-left">
         {% if setting('site_name') %}
-            <li>{{ link_to(setting('site_name'), setting('site_url')) | raw }}</li>
+            <li>{{ link_to(setting('site_name'), setting('site_url')) }}</li>
         {% endif %}
         {% if project %}
-            <li>{{ link_to(setting('title'), '/') | raw }}</li>
+            <li>{{ link_to(setting('title'), '/') }}</li>
         {% endif %}
         </ul>
         <ul class="links-user nav navbar-nav navbar-right">
         {% if constant('LOGGEDIN') %}
             {% if current_user.group.is_admin or (project and current_user.permission(project.id, 'project_settings')) %}
             <li class="dropdown">
-                {{ link_to(TWBS.fa('cog') ~ " " ~ TWBS.caret, '#', {class: 'dropdown-toggle', 'data-toggle': 'dropdown'}) | raw }}
+                {{ link_to(TWBS.fa('cog') ~ " " ~ TWBS.caret, '#', {class: 'dropdown-toggle', 'data-toggle': 'dropdown'}) }}
                 <ul class="dropdown-menu">
                 {% if project %}
-                    <li>{{ link_to(t('project_settings'), project.href('settings')) | raw }}</li>
+                    <li>{{ link_to(t('project_settings'), project.href('settings')) }}</li>
                 {% endif %}
                 {% if current_user.group.is_admin %}
-                    <li>{{ link_to(t('admincp'), '/admincp') | raw }}</li>
+                    <li>{{ link_to(t('admincp'), '/admincp') }}</li>
                 {% endif %}
                 </ul>
             </li>
             {% endif %}
             <li class="dropdown">
-                {{ link_to(Gravatar.forUser(current_user, 18) ~ " " ~ TWBS.caret(), '/usercp', {class: 'dropdown-toggle', 'data-toggle': 'dropdown'}) | raw }}
+                {{ link_to(Gravatar.forUser(current_user, 18) ~ " " ~ TWBS.caret(), '/usercp', {class: 'dropdown-toggle', 'data-toggle': 'dropdown'}) }}
                 <ul class="dropdown-menu">
-                    <li>{{ link_to(t('profile'), current_user) | raw }}</li>
-                    <li>{{ link_to(t('usercp'), '/usercp') | raw }}</li>
-                    <li>{{ link_to(t('logout'), '/login') | raw }}</li>
+                    <li>{{ link_to(t('profile'), current_user) }}</li>
+                    <li>{{ link_to(t('usercp'), '/usercp') }}</li>
+                    <li>{{ link_to(t('logout'), '/login') }}</li>
                 </ul>
             </li>
         {% else %}
             <li class="dropdown">
-                {{ link_to(TWBS.fa('user') ~ " " ~ TWBS.caret, '/usercp', {class: 'dropdown-toggle', 'data-toggle': 'dropdown'}) | raw }}
+                {{ link_to(TWBS.fa('user') ~ " " ~ TWBS.caret, '/usercp', {class: 'dropdown-toggle', 'data-toggle': 'dropdown'}) }}
                 <ul class="dropdown-menu">
-                    <li>{{ link_to(t('login'), '/login', {'data-overlay': true}) | raw }}</li>
-                    <li>{{ link_to(t('register'), '/register') | raw }}</li>
+                    <li>{{ link_to(t('login'), '/login', {'data-overlay': true}) }}</li>
+                    <li>{{ link_to(t('register'), '/register') }}</li>
                 </ul>
             </li>
         {% endif %}

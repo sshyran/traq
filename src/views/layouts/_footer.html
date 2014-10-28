@@ -1,12 +1,14 @@
 <footer id="footer">
     <div class="container">
-        <span class="text-muted">{{ t('copyright') | raw }}</span>
+        <span class="text-muted">{{ t('copyright') }}</span>
     </div>
 </footer>
 <div id="overlay"></div>
-{{ js_inc_tag('assets/components/jquery/dist/jquery.min.js') | raw }}
-{{ js_inc_tag('assets/components/jquery-ui/jquery-ui.min.js') | raw }}
-{{ js_inc_tag('assets/components/bootstrap/dist/js/bootstrap.min.js') | raw }}
-{{ js_inc_tag('assets/js/ujs.js') | raw }}
-{{ js_inc_tag('assets/js/traq.js') | raw }}
-{{ js_inc_tag('_js') | raw }}
+{{ js_inc_tag('assets/components/jquery/dist/jquery.min.js') }}
+{{ js_inc_tag('assets/components/jquery-ui/jquery-ui.min.js') }}
+{{ js_inc_tag('assets/components/bootstrap/dist/js/bootstrap.min.js') }}
+{{ js_inc_tag('assets/js/ujs.js') }}
+{{ js_inc_tag('assets/js/traq.js') }}
+{{ js_inc_tag('_js') }}
+
+<!-- {{ render_stats() }} -->
