@@ -78,6 +78,13 @@ class AppController extends Controller
 
                 // Send the project object to the view
                 $this->set('project', $this->project);
+
+                $activeProjectMilestones = $this->project->milestones()
+                    ->where('status = ?', 1)
+                    ->orderBy('displayorder', 'ASC')
+                    ->fetchAll();
+
+                $this->set('active_project_milestones', $activeProjectMilestones);
             } else {
                 $this->showNoPermission();
             }
@@ -187,6 +194,6 @@ class AppController extends Controller
             $this->user = User::anonymousUser();
         }
 
-        $this->set('currentUser', $this->user);
+        $this->set('current_user', $this->user);
     }
 }

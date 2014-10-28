@@ -1,0 +1,45 @@
+{% include 'layouts/_meta_nav.html' %}
+<header id="header" class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+        {% if project %}
+            {{ link_to(project.name, project.slug, {class: 'navbar-brand'}) | raw }}
+        {% else %}
+            {{ link_to(setting('title'), '/', {class: 'navbar-brand'}) | raw }}
+        {% endif %}
+        </div>
+        <nav id="nav-main">
+        {% if project %}
+            <ul class="nav navbar-nav navbar-left">
+                <li>{{ link_to(t('timeline'), project.href('timeline')) | raw }}</li>
+                <li class="roadmap dropdown">
+                    {{ link_to(t('roadmap'), project.href('roadmap'), {class: 'link'}) | raw }}
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    {% for milestone in active_project_milestones %}
+                        <li>
+                            <a href="{{ url(milestone.href) }}">
+                                {{ milestone.name }}
+                                {% if milestone.codename %}
+                                    <em class="project-codename">{{ milestone.codename }}</em>
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </li>
+                <li>{{ link_to(t('issues'), project.href('issues')) | raw }}</li>
+                <li>{{ link_to(t('changelog'), project.href('changelog')) | raw }}</li>
+                {% if project.enable_wiki %}
+                    <li>{{ link_to(t('wiki'), project.href('wiki')) | raw }}</li>
+                {% endif %}
+            </ul>
+            {% if constant('LOGGEDIN') %}
+            <div class="navbar-left">
+                {{ link_to(t('create_issue'), project.href('issues/new'), {class: 'btn btn-primary btn-sm btn-create-issue', 'data-overlay': true}) | raw }}
+            </div>
+            {% endif %}
+        {% endif %}
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+    <head>
+        {% include('layouts/_head.html') %}
+        {{ run_hook('template:layouts/default:head') }}
+    </head>
+    <body>
+        {% include('layouts/_header.html') %}
+        <main id="page">
+{{ content | raw }}
+        </main>
+        {% include('layouts/_footer.html') %}
+    </body>
+</html>

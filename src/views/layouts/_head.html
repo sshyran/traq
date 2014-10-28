@@ -1,0 +1,5 @@
+<title>{{ traq.title | join(' - ') }}</title>
+<meta charset="UTF-8" />
+{{ css_link_tag('assets/css/default.css') | raw }}
+{{ css_link_tag('assets/components/font-awesome/css/font-awesome.min.css') | raw }}
+{{ run_hook('template:layouts/_head') }}
