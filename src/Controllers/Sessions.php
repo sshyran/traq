@@ -49,24 +49,38 @@ class Sessions extends AppController
     /**
      * Login form
      */
-    public function newAction() {}
+    public function newAction() {
+        return $this->respondTo(function($format){
+            if ($format == 'html') {
+                if (Request::header('x-overlay')) {
+                    return $this->render('sessions/new.overlay.html');
+                } else {
+                    return $this->render('sessions/new.html');
+                }
+            }
+        });
+    }
 
     /**
      * Create session
      */
     public function createAction()
     {
-        $this->setView('Sessions/new');
+        $activationRequired = false;
 
-        if ($user = User::find('username', Request::$post['username'])
+        if ($user = User::find('username', Request::post('username'))
         and $user->authenticate(Request::$post['password'])) {
             if ($user->isActivated()) {
                 setcookie('_traq', $user->login_hash, time() + (2 * 4 * 7 * 24 * 60 * 60 * 60), '/');
                 $this->redirectTo(isset(Request::$post['redirect']) ? Request::$post['redirect'] : '/');
             } else {
-                $this->set('activationRequired', true);
+                $activationRequired = true;
             }
         }
+
+        return $this->render('sessions/new.html', [
+            'activation_required' => $activationRequired
+        ]);
     }
 
     /**

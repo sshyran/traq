@@ -1,0 +1,22 @@
+<div class="new-session container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>{{ t('login') }}</h1>
+
+            {% if request.method == 'POST' %}
+                {% if activation_required %}
+                    {{ TWBS.alert(t('errors.account.activation_required'), 'danger', false) | raw }}
+                {% else %}
+                    {{ TWBS.alert(t('errors.invalid_username_or_password'), 'danger', false) | raw }}
+                {% endif %}
+            {% endif %}
+
+            <form action="{{ url('login') }}" method="post" class="form-horizontal">
+                {% include('sessions/_form.html') %}
+                <div class="form-actions">
+                    {{ Form.submit(t('login'), {class: 'btn btn-success'}) | raw }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
