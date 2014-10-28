@@ -52,6 +52,7 @@ class AppController extends Controller
     public $isApi = false;
     public $title = array();
     public $feeds = array();
+    public $layout = 'default.html';
 
     public function __construct()
     {

@@ -27,8 +27,16 @@ use Exception;
 use Radium\Application;
 use Radium\Language;
 use Radium\Templating\View;
+use Radium\Templating\Engines\PhpEngine;
+use Radium\Templating\Engines\TwigEngine;
+use Radium\Templating\Engines\DelegationEngine;
+use Radium\Templating\TwigExtensions\HTML;
+use Radium\Helpers\Form;
 use Traq\Models\Setting;
 use Traq\Models\Plugin;
+use Traq\Helpers\Twig;
+use Traq\Helpers\TWBS;
+use Traq\Helpers\Gravatar;
 
 /**
  * The heart of Traq.
@@ -98,9 +106,6 @@ class Traq extends Application
         if ($theme !== 'default') {
             View::addPath(__DIR__ . "/../vendor/traq/themes/{$theme}", true);
         }
-
-        // Add Twitter Bootstrap helper view directory to view search path.
-        View::addPath(__DIR__ . "/views/TWBS");
 
         require __DIR__ . "/common.php";
 
@@ -189,6 +194,28 @@ class Traq extends Application
         } else {
             throw new Exception("Unable to load main configuration file.");
         }
+    }
+
+    /**
+     * Setup the templating with helpers.
+     */
+    protected function configureTemplating()
+    {
+        View::configure(function($view){
+            $twig = new TwigEngine;
+            $twig->twig()->addExtension(new HTML);
+            $twig->twig()->addExtension(new Twig);
+
+            $view->setEngine(new DelegationEngine([
+                $twig,
+                new PhpEngine
+            ]));
+
+            $view->addPath("{$this->path}/views");
+            $view->addGlobal('TWBS', new TWBS);
+            $view->addGlobal('Form', new Form);
+            $view->addGlobal('Gravatar', new Gravatar);
+        });
     }
 
     /**
