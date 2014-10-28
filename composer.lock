@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "02f20596684b368e080b718924863112",
+    "hash": "1551521e151b59a2e442840c5cbe1c8c",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -182,18 +182,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/radiumphp/twig-templating.git",
-                "reference": "2303f3db958664da552d88cca4b7a134b697c9f4"
+                "reference": "9f817ff4bd774c77010c1ef2a131bf1a90240174"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radiumphp/twig-templating/zipball/2303f3db958664da552d88cca4b7a134b697c9f4",
-                "reference": "2303f3db958664da552d88cca4b7a134b697c9f4",
+                "url": "https://api.github.com/repos/radiumphp/twig-templating/zipball/9f817ff4bd774c77010c1ef2a131bf1a90240174",
+                "reference": "9f817ff4bd774c77010c1ef2a131bf1a90240174",
                 "shasum": ""
             },
             "require": {
                 "twig/twig": "1.16.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Radium\\Templating\\": "src/"
@@ -215,7 +220,7 @@
                 "templating",
                 "twig"
             ],
-            "time": "2014-10-28 09:16:57"
+            "time": "2014-10-28 16:52:30"
         },
         {
             "name": "traq/markdown-plugin",
@@ -370,10 +375,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "radium/framework": 20,
-        "radium/twig-templating": 20,
         "radium/schema-builder": 20
     },
     "prefer-stable": true,
