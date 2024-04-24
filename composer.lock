@@ -1,10 +1,9 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "d80879035baca2ac4ac716241469cbac",
     "content-hash": "6b024af1503ce0079e8e4181995a133a",
     "packages": [
         {
@@ -52,7 +51,7 @@
                 "framework",
                 "mvc"
             ],
-            "time": "2016-02-02 14:33:16"
+            "time": "2016-02-02T14:33:16+00:00"
         },
         {
             "name": "avalon/database",
@@ -101,7 +100,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-02-05 03:22:56"
+            "time": "2016-02-05T03:22:56+00:00"
         },
         {
             "name": "avalon/database-migrations",
@@ -148,7 +147,7 @@
                 "migrations",
                 "schema"
             ],
-            "time": "2016-01-04 03:29:10"
+            "time": "2016-01-04T03:29:10+00:00"
         },
         {
             "name": "avalon/framework",
@@ -188,7 +187,7 @@
                 }
             ],
             "description": "The Avalon framework.",
-            "time": "2015-12-21 10:34:40"
+            "time": "2015-12-21T10:34:40+00:00"
         },
         {
             "name": "avalon/helpers",
@@ -234,7 +233,7 @@
                 "framework",
                 "helpers"
             ],
-            "time": "2016-02-05 03:29:52"
+            "time": "2016-02-05T03:29:52+00:00"
         },
         {
             "name": "avalon/hook",
@@ -280,7 +279,7 @@
                 "avalon",
                 "plugin"
             ],
-            "time": "2015-07-14 04:06:26"
+            "time": "2015-07-14T04:06:26+00:00"
         },
         {
             "name": "avalon/language",
@@ -326,7 +325,7 @@
                 "language",
                 "translations"
             ],
-            "time": "2016-01-30 09:11:53"
+            "time": "2016-01-30T09:11:53+00:00"
         },
         {
             "name": "avalon/templating",
@@ -371,7 +370,7 @@
                 "framework",
                 "templating"
             ],
-            "time": "2016-02-02 14:10:38"
+            "time": "2016-02-02T14:10:38+00:00"
         },
         {
             "name": "avalon/validation",
@@ -411,7 +410,7 @@
                 }
             ],
             "description": "Avalon validation component.",
-            "time": "2016-02-05 03:22:26"
+            "time": "2016-02-05T03:22:26+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -479,7 +478,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2015-08-31 12:32:49"
+            "time": "2015-08-31T12:32:49+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -549,7 +548,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-12-31 16:37:02"
+            "time": "2015-12-31T16:37:02+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -615,7 +614,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14 22:21:58"
+            "time": "2015-04-14T22:21:58+00:00"
         },
         {
             "name": "doctrine/common",
@@ -688,7 +687,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-12-25 13:18:31"
+            "time": "2015-12-25T13:18:31+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -759,7 +758,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2016-01-05 22:11:12"
+            "time": "2016-01-05T22:11:12+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -826,7 +825,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06 14:35:42"
+            "time": "2015-11-06T14:35:42+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -880,7 +879,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-09-09T13:34:57+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -919,7 +918,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-08-03 09:24:05"
+            "time": "2015-08-03T09:24:05+00:00"
         },
         {
             "name": "erusev/parsedown-extra",
@@ -963,27 +962,28 @@
                 "parsedown",
                 "parser"
             ],
-            "time": "2015-11-01 10:19:22"
+            "time": "2015-11-01T10:19:22+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.1",
+            "version": "v5.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421"
+                "reference": "181b89f18a90f8925ef805f950d47a7190e9b950"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/181b89f18a90f8925ef805f950d47a7190e9b950",
+                "reference": "181b89f18a90f8925ef805f950d47a7190e9b950",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1,<0.9.4"
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.2"
             },
             "type": "library",
             "extra": {
@@ -1010,13 +1010,18 @@
                 }
             ],
             "description": "Swiftmailer, free feature-rich PHP mailer",
-            "homepage": "http://swiftmailer.org",
+            "homepage": "https://swiftmailer.symfony.com",
             "keywords": [
                 "email",
                 "mail",
                 "mailer"
             ],
-            "time": "2015-06-06 14:19:39"
+            "support": {
+                "issues": "https://github.com/swiftmailer/swiftmailer/issues",
+                "source": "https://github.com/swiftmailer/swiftmailer/tree/v5.4.12"
+            },
+            "abandoned": "symfony/mailer",
+            "time": "2018-07-31T09:26:32+00:00"
         },
         {
             "name": "traq/markdown-plugin",
@@ -1055,7 +1060,7 @@
                 "plugin",
                 "traq"
             ],
-            "time": "2015-03-27 00:29:19"
+            "time": "2015-03-27T00:29:19+00:00"
         }
     ],
     "packages-dev": [
@@ -1102,7 +1107,7 @@
                 "framework",
                 "testing"
             ],
-            "time": "2015-12-21 12:27:08"
+            "time": "2015-12-21T12:27:08+00:00"
         },
         {
             "name": "filp/whoops",
@@ -1161,7 +1166,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2016-01-06 17:51:21"
+            "time": "2016-01-06T17:51:21+00:00"
         }
     ],
     "aliases": [],
@@ -1172,5 +1177,6 @@
     "platform": {
         "php": ">=5.5"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
 }
